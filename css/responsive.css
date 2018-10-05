@@ -1,0 +1,79 @@
+/******************************************************************************
+ * Resources
+
+https://css-tricks.com/snippets/css/fluid-typography/
+https://internetingishard.com/html-and-css/responsive-design/
+https://css-tricks.com/almanac/properties/l/letter-spacing/
+https://css-tricks.com/forums/topic/responsive-web-design-when-to-use-px-vs-on-margins-and-padding/
+
+
+ */
+
+/******************************************************************************
+ * Default responsive styling
+ */
+
+* {
+    font-size: calc(14px + 6 * ((100vw - 320px) / 680));
+}
+#maincontent {
+    align-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;  
+}
+#map-container {
+    max-height: 375px;
+    width: 100%
+}
+#map {
+    height: 300px;
+}
+section {
+    width: 100%;
+    height: 300px;
+}
+body {
+    margin: 0;
+}
+
+/******************************************************************************
+ * Mobile first responsive styling
+ */
+
+@media only screen and (max-width: 400px) {
+/* Nav */
+    .leaflet-control-attribution .leaflet-container {
+        font-size: 0.5rem;
+    }
+    .leaflet-container a {
+        font-size: 0.5rem;
+    }
+    nav h1 {
+        margin: 0;
+        padding: 20px 10%;
+        letter-spacing: 0.4rem;
+    }
+}
+
+/******************************************************************************
+ * Tablet responsive styling
+ */
+
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+
+}
+
+/******************************************************************************
+ * Desktop responsive styling
+ */
+
+ @media only screen and (min-width: 961px) {
+
+    html nav h1 a {
+        font-size: 22px;
+    }
+}
