@@ -104,18 +104,22 @@ nav h1 a {
  */
 
 .filter-options {
-  background-color: #3397DB;
+    background-color: #3397DB;
+  
+}
+.neighborhoods-filter-wrapper, .cuisines-filter-wrapper {
+    padding: 10px 8px 10px 12px;
 }
 .filter-options h2 {
-  color: white;
-  font-weight: normal;
-  line-height: 1;
+    color: white;
+    font-weight: normal;
+    line-height: 1;
 }
 .filter-options select {
-  background-color: white;
-  border: 1px solid #fff;
-  font-family: Arial,sans-serif;
-  letter-spacing: 0;
+    background-color: white;
+    border: 1px solid #fff;
+    font-family: Arial,sans-serif;
+    letter-spacing: 0;
 }
 
 /******************************************************************************
@@ -128,7 +132,7 @@ nav h1 a {
 }
 #restaurants-list li {
   background-color: #fff;
-  border: 2px solid #ccc;
+  /*border: 2px solid #ccc;*/
   font-family: Arial,sans-serif;
 }
 #restaurants-list .restaurant-img {

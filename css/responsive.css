@@ -5,7 +5,7 @@ https://css-tricks.com/snippets/css/fluid-typography/
 https://internetingishard.com/html-and-css/responsive-design/
 https://css-tricks.com/almanac/properties/l/letter-spacing/
 https://css-tricks.com/forums/topic/responsive-web-design-when-to-use-px-vs-on-margins-and-padding/
-
+https://wisdmlabs.com/blog/customize-drop-down-list-using-css/
 
  */
 
@@ -16,15 +16,18 @@ https://css-tricks.com/forums/topic/responsive-web-design-when-to-use-px-vs-on-m
 * {
     font-size: calc(14px + 6 * ((100vw - 320px) / 680));
     max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 #map-container {
     max-height: 375px;
     width: 100%
 }
-#map {
-    height: 300px;
+#maincontent {
+    width: 100%;
+    min-height: 100%;
 }
-section {
+#map {
     height: 300px;
 }
 header {
@@ -38,9 +41,34 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin: 0;
+
 }
 ul {
     padding: 0;
+}
+nav {
+    height: 100%;
+}
+#restaurants-list li a {
+
+}
+.neighborhoods-filter-wrapper, .cuisines-filter-wrapper {
+    padding: 10px 8px 10px 14px;
+    display: inline-block;
+    position: relative;
+}
+#neighborhoods-select, #cuisines-select {
+    border-radius: 5px;
+}
+select {
+    width: 120%;
+    background: transparent;
+    line-height: 1;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    z-index: 10;
+    font-size: 1em;
 }
 
 /******************************************************************************
@@ -60,23 +88,25 @@ ul {
         padding: 20px 10%;
         letter-spacing: 0.4rem;
     }
-    img {
+    li {
         margin: 0.5rem;
+    }
+    img, li {
         max-width: 100%;
+        border-radius: 7% 0px;
     }
 
-/* Restaurants */
+    /* Restaurants */
     #restaurants-list li h1 {
         padding-left: 0.75rem;
         margin-bottom: 0;
     }
-       #restaurants-list li p {
+    #restaurants-list li p {
         padding-left: 0.75rem;
         display: inline-block;
         margin-top: 0.5rem;
     }
 }
-
 /******************************************************************************
  * Tablet responsive styling
  */
@@ -91,7 +121,7 @@ ul {
 
  @media only screen and (min-width: 961px) {
 
-    html nav h1 a {
+    html, nav, h1, a {
         font-size: 22px;
     }
 }
