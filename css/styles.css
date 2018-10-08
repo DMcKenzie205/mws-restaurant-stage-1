@@ -104,8 +104,7 @@ nav h1 a {
  */
 
 .filter-options {
-    background-color: #3397DB;
-  
+    background-color: #3397DB;  
 }
 .neighborhoods-filter-wrapper, .cuisines-filter-wrapper {
     padding: 10px 8px 10px 12px;
@@ -149,11 +148,12 @@ nav h1 a {
 
 #restaurants-list li a {
   background-color: orange;
-  border-bottom: 3px solid #eee;
+  border-bottom: 2px solid #eee;
   color: #fff;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  border-radius: 7px;
 }
 
 /******************************************************************************
