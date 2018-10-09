@@ -6,6 +6,8 @@ https://internetingishard.com/html-and-css/responsive-design/
 https://css-tricks.com/almanac/properties/l/letter-spacing/
 https://css-tricks.com/forums/topic/responsive-web-design-when-to-use-px-vs-on-margins-and-padding/
 https://wisdmlabs.com/blog/customize-drop-down-list-using-css/
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+https://bulma.io/documentation/overview/responsiveness/#breakpoints
 
  */
 
@@ -35,6 +37,7 @@ body {
 }
 html {
     box-sizing: border-box;
+    background-color: #D6DBDF;
 }
 
 /* Nav */
@@ -109,7 +112,36 @@ img, li {
 #restaurants-list li a {
     display: block;
     margin: 0.5rem auto;
-    max-width: 50%;
+    max-width: 30%;
+}
+#restaurant-name, #restaurant-address {
+    margin: 1rem 0 0.5rem 0;
+}
+#restaurant-hours {
+    margin-bottom: 0.5rem;
+}
+#restaurant-container, #restaurant-img, #reviews-container {
+    margin: 0.5rem auto;
+    max-width: 90vw;
+}
+#reviews-container h2 {
+    margin: 0.5rem auto;
+}
+#reviews-list li:first-of-type {
+    background-color: #333;
+}
+#reviews-list li:nth-of-type(2n) {
+    background-color: #333;
+}
+#reviews-list li span:nth-of-type(2n) {
+    float: right;
+}
+
+#reviews-list span {
+    background-color: #333;
+    color: #fff;
+    margin-left: 0.75rem;
+    margin-top: 0.5rem;
 }
 
 /* Footer */
@@ -126,41 +158,13 @@ footer {
 @media only screen and (min-width: 769px) and (max-width: 1023px) {
 
 /* Nav */
-    .leaflet-control-attribution .leaflet-container {
-        font-size: 0.5rem;
-    }
-    .leaflet-container a {
-        font-size: 0.5rem;
-    }    
-    nav h1 {
-        letter-spacing: 0.4rem;
-        padding: 20px 10%;
-    }
+ 
     li {
         height: 100%;
         margin: 2rem 1rem;
     }
     img, li {
-        border-radius: 7% 0px;
-        max-width: 100%;
-    }
-
-/* Restaurants */
-    #restaurants-list li {
-        padding-bottom: 0.25rem;
-    }
-    #restaurants-list li h1 {
-        margin-bottom: 0;
-        margin-left: 0.75rem;
-    }
-    #restaurants-list li p {
-        display: inline-block;
-        margin-left: 0.75rem;
-        margin-top: 0.5rem;
-    }
-    #restaurants-list li a {
-        margin: 0.5rem auto;
-        max-width: 30%;
+        max-width: 800px;
     }
 }
 
@@ -168,7 +172,7 @@ footer {
  * Desktop responsive styling
  */
 
- @media only screen and (min-width: 1024px) and (max-width: 1215px) {
+@media only screen and (min-width: 1024px) and (max-width: 1215px) {
 
     html, nav, h1, a {
         font-size: 22px;
@@ -183,7 +187,7 @@ footer {
 
     /* Restaurants */
     #restaurants-list li {
-        margin: 0 auto;
+        margin: 1rem auto;
     }
     #restaurants-list li h1 {
         margin-bottom: 0;
@@ -197,5 +201,26 @@ footer {
     #restaurants-list li a {
         margin: 10px auto;
         max-width: 30%;
+    }
+}
+
+/******************************************************************************
+ * Widescreen responsive styling
+ */
+
+@media only screen and (min-width: 1216px) {
+    
+      html, nav, h1, a {
+        font-size: 22px;
+    }
+    html, body {
+        margin: 0 auto;
+        max-width: 1080px;
+    }
+    img, li {
+        max-width: 800px;
+    }
+    li {
+        margin: 2rem auto;
     }
 }
