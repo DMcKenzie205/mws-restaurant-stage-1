@@ -120,28 +120,16 @@ img, li {
 #restaurant-hours {
     margin-bottom: 0.5rem;
 }
-#restaurant-container, #restaurant-img, #reviews-container {
+#restaurant-container, #reviews-container {
     margin: 0.5rem auto;
     max-width: 90vw;
+    align-items: center;
 }
 #reviews-container h2 {
     margin: 0.5rem auto;
 }
-#reviews-list li:first-of-type {
-    background-color: #333;
-}
-#reviews-list li:nth-of-type(2n) {
-    background-color: #333;
-}
-#reviews-list li span:nth-of-type(2n) {
-    float: right;
-}
-
-#reviews-list span {
-    background-color: #333;
-    color: #fff;
-    margin-left: 0.75rem;
-    margin-top: 0.5rem;
+#reviews-list li {
+    margin-top: 1rem;
 }
 
 /* Footer */
@@ -166,6 +154,10 @@ footer {
     img, li {
         max-width: 800px;
     }
+    #restaurant-img {
+        margin: 1rem auto;
+    }
+
 }
 
 /******************************************************************************

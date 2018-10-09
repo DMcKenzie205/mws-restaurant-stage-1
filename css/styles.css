@@ -156,20 +156,12 @@ nav h1 a {
     text-decoration: none;
     text-transform: uppercase;
 }
-#reviews-list p {
-    margin-left: 0.75rem;
-    margin-top: 0.5rem;
-}
-#reviews-list p:first-of-type {
-    background-color: color: #f18200;
-}
-
 
 /******************************************************************************
  * Restaurant Details
  */
 
-.inside header {
+.inside .header-main {
     position: fixed;
     top: 0;
     width: 100%;
@@ -219,4 +211,35 @@ nav h1 a {
 }
 #restaurant-hours td {
     color: #666;
+}
+#reviews-list p {
+    margin-left: 0.75rem;
+    margin-top: 0.5rem;
+}
+#reviews-list li {
+    border-radius: 15px 0;
+}
+.review__rating {
+    background-color: #f18200;
+    color: #fff;
+    margin: 0.75rem 0 0 0.75rem;
+    padding: 0.5rem;
+    border-radius: 2px;
+}
+.review__header {
+    background-color: #252831;
+    color: #fff;
+    margin: 0 0 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+.span__user {
+    margin: 0.5rem 0 .05rem 0.75rem;
+}
+.span__date {
+    color: #aaa;
+    margin: 0.5rem 0.75rem 0.5rem 0;
+}
+.comment__content {
+    margin: 0.5rem 0.5rem 1rem 0.5rem;
 }
