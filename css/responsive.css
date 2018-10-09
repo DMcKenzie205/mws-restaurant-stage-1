@@ -155,7 +155,8 @@ footer {
         max-width: 800px;
     }
     #restaurant-img {
-        margin: 1rem auto;
+        margin: 0 auto;
+        display: inline-block;
     }
 
 }
