@@ -81,13 +81,16 @@ fetchRestaurantFromURL = (callback) => {
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
+  name.setAttribute('tabIndex', '0');
   name.innerHTML = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
+  address.setAttribute('tabIndex', '0');
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
+  image.alt = `A photo of ${restaurant.name} restaurant`;
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
@@ -106,6 +109,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
+  hours.setAttribute('tabIndex', '0');
   for (let key in operatingHours) {
     const row = document.createElement('tr');
 
@@ -127,6 +131,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
+  title.setAttribute('tabIndex', '0');
   title.innerHTML = 'Reviews';
   container.appendChild(title);
 
@@ -158,21 +163,25 @@ createReviewHTML = (review) => {
   wrapper.appendChild(header);
 
   const name = document.createElement('span');
+  name.setAttribute('tabIndex', '0');
   name.className = 'span__user';
   name.innerHTML = review.name;
   header.appendChild(name);
 
   const date = document.createElement('span');
+  date.setAttribute('tabIndex', '0');
   date.className = 'span__date';
   date.innerHTML = review.date;
   header.appendChild(date);
 
   const rating = document.createElement('span');
+  rating.setAttribute('tabIndex', '0');
   rating.className = 'review__rating';
   rating.innerHTML = `Rating: ${review.rating}`;
   wrapper.appendChild(rating);
 
   const comments = document.createElement('p');
+  comments.setAttribute('tabIndex', '0');
   comments.className = 'comment__content';
   comments.innerHTML = review.comments;
   wrapper.appendChild(comments);
@@ -186,6 +195,7 @@ createReviewHTML = (review) => {
 fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
+  li.setAttribute('aria-current', 'page');
   li.innerHTML = restaurant.name;
   breadcrumb.appendChild(li);
 }
