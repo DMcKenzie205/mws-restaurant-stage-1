@@ -155,8 +155,8 @@ footer {
         max-width: 800px;
     }
     #restaurant-img {
-        margin: 0 auto;
-        display: inline-block;
+        margin: 1rem auto;
+        display: block;
     }
 
 }
@@ -174,11 +174,14 @@ footer {
         margin: 0 auto;
         max-width: 1080px;
     }
-    img, li {
+    li {
         max-width: 800px;
     }
+    img {
+        max-width: 600px;
+    }
 
-    /* Restaurants */
+/* Restaurants */
     #restaurants-list li {
         margin: 1rem auto;
     }
@@ -195,6 +198,19 @@ footer {
         margin: 10px auto;
         max-width: 30%;
     }
+/* Restaurant details page */
+    #restaurant-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        flex-flow: column wrap;
+    }
+    .restaurant__details, #restaurant-img {
+        max-width: 50%;
+    }
+
 }
 
 /******************************************************************************
@@ -216,4 +232,5 @@ footer {
     li {
         margin: 2rem auto;
     }
+
 }
