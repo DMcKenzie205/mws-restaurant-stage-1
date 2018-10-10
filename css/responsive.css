@@ -177,9 +177,6 @@ footer {
     li {
         max-width: 800px;
     }
-    img {
-        max-width: 600px;
-    }
 
 /* Restaurants */
     #restaurants-list li {
@@ -202,15 +199,25 @@ footer {
     #restaurant-container {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-between;
         flex-wrap: wrap;
         align-items: flex-start;
-        flex-flow: column wrap;
+        flex-flow: row wrap;
+    }
+    #reviews-container h2 {
+        font-size: 1.5rem;
     }
     .restaurant__details, #restaurant-img {
-        max-width: 50%;
+        max-width: 49%;
     }
-
+    #restaurant-name {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+    #reviews-list li {
+        margin: 0.5rem auto;
+        justify-content: center;
+    }
 }
 
 /******************************************************************************
@@ -219,12 +226,12 @@ footer {
 
 @media only screen and (min-width: 1216px) {
     
-      html, nav, h1, a {
+    * {
         font-size: 22px;
     }
     html, body {
         margin: 0 auto;
-        max-width: 1080px;
+        max-width: 1280px;
     }
     img, li {
         max-width: 800px;
@@ -232,5 +239,48 @@ footer {
     li {
         margin: 2rem auto;
     }
-
+* Restaurants */
+    #restaurants-list li {
+        margin: 1rem auto;
+    }
+    #restaurants-list li h1 {
+        margin-bottom: 0;
+        margin-left: 0.75rem;
+    }
+    #restaurants-list li p {
+        display: inline-block;
+        margin-left: 0.75rem;
+        margin-top: 0.5rem;
+    }
+    #restaurants-list li a {
+        margin: 10px auto;
+        max-width: 30%;
+    }
+/* Restaurant details page */
+    #restaurant-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        flex-flow: row wrap;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        padding-bottom: 1rem;
+    }
+    #reviews-container h2 {
+        font-size: 1.5rem;
+        margin-left: 2rem;
+    }
+    .restaurant__details, #restaurant-img {
+        max-width: 49%;
+    }
+    #restaurant-name {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+    #reviews-list li {
+        margin: 1rem auto;
+        justify-content: center;
+    }
 }
