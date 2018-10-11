@@ -215,3 +215,15 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
+/******************************************************************************
+ * Service-worker
+ 
+
+ https://developers.google.com/web/fundamentals/primers/service-workers/
+ */
+
+
+
+
+
+ 
