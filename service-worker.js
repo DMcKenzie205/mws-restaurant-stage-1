@@ -1,3 +1,11 @@
+/******************************************************************************
+ * Resources
+
+ https://serviceworke.rs
+
+ */
+
+
 let CACHE = 'restaurant-cache-v1';
 let urlsToCache = [
     '/',
@@ -37,6 +45,14 @@ function precache() {
 function fromCache(request) {
     return caches.open(CACHE).then(function (cache) {
         return fetch(request).then(function (response) {
+            return cache.put(request, response);
+        });
+    });
+}
+
+function update(request) {
+    return caches.open(CACHE).then(function(cache) {
+        return fetch(request).then(function(response) {
             return cache.put(request, response);
         });
     });
