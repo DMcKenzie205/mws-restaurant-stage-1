@@ -7,53 +7,58 @@
 
 
 let CACHE = 'restaurant-cache-v1';
-let urlsToCache = [
-    '/',
-    '/index.html',
-    '/restaurant.html',
-    '/css/styles.css',
-    '/css/responsive.css',
-    'https://unpkg.com/leaflet@1.3.1/dist/leaflet.css',
-    '/img/',
-    '/js/main.js',
-    '/js/dbhelper.js',
-    '/js/restaurant_info.js',
-    '/data/restaurants.json'
-];
+
 
 self.addEventListener('install', function(evt) {
     console.log('The service worker is being installed.');
     // Perform install steps
 
-    evt.waitUntil(precache());
+    evt.waitUntil(
+            caches.open(CACHE)
+            .then(function(cache) {
+
+                return fetch('files-to-cache.json').then(function(response) {
+
+                    return response.json();
+                }).then(function(files) {
+
+                    console.log('[install] Adding files from JSON file: ', files);
+                    return cache.addAll(urlsToCache);
+                });
+            }).then(function() {
+
+                console.log(
+                            '[install] All required resources have been cached;',
+                            'the Service Worker was successfully installed!');
+
+                return self.skipWaiting();
+            })
+    );
 });
 
 self.addEventListener('fetch', function(evt) {
-    console.log(evt.request.url);
+    evt.respondWith(
+            caches.match(evt.request)
+            .then(function(response) {
 
-    evt.respondWith(fromCache(evt.request));
+                if (response) {
+                    console.log('[fetch] Returning from Service Worker cache: ',
+                                evt.request.url
+                                );
+                    return response;
+                }
 
-    evt.waitUntil(update(evt.request));
+                console.log('[fetch] Returning from Server: ', evt.request.url);
+                return fetch(evt.request);
+            }
+            )
+    );
 });
 
-function precache() {
-    return caches.open(CACHE).then(function(cache) {
-        return cache.addAll(urlsToCache);
-    });
-}
+self.addEventListener('activate', function(evt) {
 
-function fromCache(request) {
-    return caches.open(CACHE).then(function (cache) {
-        return fetch(request).then(function (response) {
-            return cache.put(request, response);
-        });
-    });
-}
+    console.log('[activate] Activating service worker!');
 
-function update(request) {
-    return caches.open(CACHE).then(function(cache) {
-        return fetch(request).then(function(response) {
-            return cache.put(request, response);
-        });
-    });
-}
+    console.log('[activate] Claiming this service worker');
+    evt.waitUntil(self.clients.claim());
+});
